@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5083499525170495"
+     crossorigin="anonymous"></script>
+  <title>Trình Tải Video Đa Nền Tảng</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #1e1e1e; color: white; margin: 0; }
+    .navbar { display: flex; justify-content: space-between; padding: 10px 20px; background: #333; }
+    .nav-left a, .nav-right a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .nav-left a:hover, .nav-right a:hover {
+      color: #00aaff;
+    }
+    .nav-right span {
+      color: #00ff99;
+    }
+    h1#title {
+      color: #ffcc00;
+    }
+    .content {
+      min-height: calc(100vh - 50px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 40px;
+    }
+    input, select, button {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      max-width: 500px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-left">
+      <a onclick="setPlatform('youtube')">YouTube</a>
+      <a onclick="setPlatform('facebook')">Facebook</a>
+      <a onclick="setPlatform('tiktok')">TikTok</a>
+      <a onclick="setPlatform('instagram')">Instagram</a>
+      <a onclick="setPlatform('twitter')">Twitter</a>
+    </div>
+    <div class="nav-right">
+      <a onclick="setPlatform('howto')">How to</a>
+      <span style="font-weight: bold; margin-left: 20px;">tsavefrom.net</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1 id="title">Tải Video YouTube</h1>
+    <form action="/download" method="post">
+      <input type="hidden" name="platform" id="platform" value="youtube" />
+      <input type="text" name="url" placeholder="Dán liên kết video tại đây..." required />
+      <select name="resolution">
+        <option value="best">Tự động (Tốt nhất)</option>
+        <option value="360">360p</option>
+        <option value="480">480p</option>
+        <option value="720">720p</option>
+        <option value="1080">1080p</option>
+      </select>
+      <select name="format">
+        <option value="mp4">MP4 (Video)</option>
+        <option value="mp3">MP3 (Audio)</option>
+      </select>
+      <button type="submit">Tải Về</button>
+    </form>
+
+    <!-- Quảng cáo dưới form -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top:20px"
+         data-ad-client="ca-pub-5083499525170495"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+  <script>
+    function setPlatform(p) {
+      document.getElementById("platform").value = p;
+      document.getElementById("title").innerText = "Tải Video " + p.charAt(0).toUpperCase() + p.slice(1);
+    }
+  </script>
+</body>
+</html>
